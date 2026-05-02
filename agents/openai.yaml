@@ -1,3 +1,0 @@
-display_name: Make macOS Appearance Wallpaper
-short_description: Build Light/Dark HEIC wallpapers for macOS.
-default_prompt: Create a macOS light/dark appearance wallpaper from the provided light and dark images.
