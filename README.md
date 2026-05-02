@@ -1,4 +1,4 @@
-# Make macOS Appearance Wallpaper Skill
+# macOS Auto Dark Light Wallpaper Skill
 
 Create macOS appearance-aware HEIC wallpapers from paired light and dark images.
 
@@ -19,13 +19,13 @@ npx skills add K0maz/macos-auto-dark-light-wallpaper
 To install only this skill when adding from a larger repository:
 
 ```bash
-npx skills add K0maz/macos-auto-dark-light-wallpaper --skill make-macos-appearance-wallpaper
+npx skills add K0maz/macos-auto-dark-light-wallpaper --skill macos-auto-dark-light-wallpaper
 ```
 
 ## Use Directly
 
 ```bash
-python3 scripts/make_macos_appearance_wallpaper.py \
+python3 scripts/macos_auto_dark_light_wallpaper.py \
   --light /path/to/light.png \
   --dark /path/to/dark.jpg \
   --output /path/to/wallpaper.heic
@@ -34,7 +34,7 @@ python3 scripts/make_macos_appearance_wallpaper.py \
 Inspect the generated HEIC:
 
 ```bash
-python3 scripts/make_macos_appearance_wallpaper.py --inspect /path/to/wallpaper.heic
+python3 scripts/macos_auto_dark_light_wallpaper.py --inspect /path/to/wallpaper.heic
 ```
 
 Expected inspection output includes `count=2` and an `apr=` value.
