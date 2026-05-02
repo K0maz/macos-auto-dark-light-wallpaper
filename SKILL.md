@@ -7,7 +7,7 @@ description: Create macOS appearance-aware HEIC wallpapers from paired light and
 
 ## Workflow
 
-Use `scripts/macos_auto_dark_light_wallpaper.py` whenever possible. It encodes the fragile part correctly: a two-frame HEIC with first frame = light, second frame = dark, and `apple_desktop:apr` set to a valid binary-plist base64 for `{"l": 0, "d": 1}`.
+Use `scripts/macos_auto_dark_light_wallpaper.py` whenever possible. It encodes the fragile part correctly: a two-frame HEIC with first frame = light, second frame = dark, and `apple_desktop:apr` set to a valid binary-plist base64 for `{"l": 0, "d": 1}`. The Python wrapper compiles the fixed Swift helper at `scripts/generator.swift`; do not generate or modify helper source at runtime.
 
 ```bash
 python3 /path/to/skill/scripts/macos_auto_dark_light_wallpaper.py \
@@ -40,4 +40,4 @@ python3 /path/to/skill/scripts/macos_auto_dark_light_wallpaper.py --inspect /pat
 
 Expected inspection output includes `count=2` and `apr=YnBsa...AAAFQ==`.
 
-If HEIC finalization fails in Codex with an IOSurface or sandbox error, rerun the same script with escalated permissions. The system HEIC encoder may need to run outside the sandbox.
+If HEIC finalization fails because the local environment blocks Apple's HEIC encoder, stop and report the exact command and error to the user. Do not retry automatically.
