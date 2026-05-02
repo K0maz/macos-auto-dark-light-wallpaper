@@ -1,0 +1,1 @@
+# macos-auto-dark-light-wallpaper
