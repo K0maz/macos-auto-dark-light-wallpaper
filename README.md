@@ -7,6 +7,7 @@ The skill wraps the fragile part of this workflow in a reusable script:
 - create a two-frame HEIC where frame 0 is light mode and frame 1 is dark mode
 - write the `apple_desktop:apr` metadata that macOS uses for Light/Dark/Automatic wallpapers
 - optionally set the generated HEIC as the current desktop wallpaper
+- compile a fixed Swift helper from `scripts/generator.swift`
 
 ## Install
 
