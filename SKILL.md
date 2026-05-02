@@ -1,16 +1,16 @@
 ---
-name: make-macos-appearance-wallpaper
+name: macos-auto-dark-light-wallpaper
 description: Create macOS appearance-aware HEIC wallpapers from paired light and dark images. Use when the user asks to make a Mac wallpaper that switches with Light Mode, Dark Mode, Auto appearance, or asks to fix a custom HEIC that appears as photo shuffle instead of showing the Automatic/Light/Dark wallpaper option.
 ---
 
-# Make macOS Appearance Wallpaper
+# macOS Auto Dark Light Wallpaper
 
 ## Workflow
 
-Use `scripts/make_macos_appearance_wallpaper.py` whenever possible. It encodes the fragile part correctly: a two-frame HEIC with first frame = light, second frame = dark, and `apple_desktop:apr` set to a valid binary-plist base64 for `{"l": 0, "d": 1}`.
+Use `scripts/macos_auto_dark_light_wallpaper.py` whenever possible. It encodes the fragile part correctly: a two-frame HEIC with first frame = light, second frame = dark, and `apple_desktop:apr` set to a valid binary-plist base64 for `{"l": 0, "d": 1}`.
 
 ```bash
-python3 /path/to/skill/scripts/make_macos_appearance_wallpaper.py \
+python3 /path/to/skill/scripts/macos_auto_dark_light_wallpaper.py \
   --light /path/to/light.png \
   --dark /path/to/dark.jpg \
   --output /path/to/name.heic
@@ -35,7 +35,7 @@ After generation, verify:
 
 ```bash
 sips -g pixelWidth -g pixelHeight /path/to/name.heic
-python3 /path/to/skill/scripts/make_macos_appearance_wallpaper.py --inspect /path/to/name.heic
+python3 /path/to/skill/scripts/macos_auto_dark_light_wallpaper.py --inspect /path/to/name.heic
 ```
 
 Expected inspection output includes `count=2` and `apr=YnBsa...AAAFQ==`.
